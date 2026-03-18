@@ -1,0 +1,6 @@
+image: lab-app:v2
+replicaCount: 2
+
+redis:
+  auth:
+    enabled: false

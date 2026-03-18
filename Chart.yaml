@@ -1,0 +1,11 @@
+apiVersion: v2
+name: flask-redis-app
+description: Aplikacja Flask z licznikiem w Redis
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
+
+dependencies:
+  - name: redis
+    version: 18.6.1
+    repository: https://charts.bitnami.com/bitnami

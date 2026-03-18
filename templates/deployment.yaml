@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-app
+  namespace: lab-app
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: flask-web
+  template:
+    metadata:
+      labels:
+        app: flask-web
+    spec:
+      containers:
+      - name: flask-container
+        image: {{ .Values.image }}
+        env:
+        - name: REDIS_HOST
+          value: "flask-redis-app-redis-master"
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 5000
