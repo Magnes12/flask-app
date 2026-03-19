@@ -1,8 +1,8 @@
 replicaCount: 2
 
 image:
-  repository: harbor.k8s.laczyk.com/lab-app/flask
-  tag: v1
+  repository: python
+  tag: 3.11-slim
   pullPolicy: IfNotPresent
 
 service:
