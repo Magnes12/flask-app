@@ -10,4 +10,7 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 5000
-  type: LoadBalancer
+  service:
+    type: ClusterIP
+    port: 80
+    targetPort: 5000
