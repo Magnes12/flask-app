@@ -1,6 +1,12 @@
-FROM python:3.11-slim
-WORKDIR /app
-RUN pip install --no-cache-dir flask
-COPY app.py .
+FROM python:3.10-alpine
+
+WORKDIR /code
+
+COPY requirements.txt /code
+
+RUN pip install -r requirements.txt
+
+COPY . /code
+
 EXPOSE 5000
 CMD ["python", "app.py"]
